@@ -18,8 +18,6 @@ def search(list):
     else:
         print("The number was at spot", i+1)
 
-
-
 A = 42
 A += 10
 vali = False
