@@ -47,6 +47,9 @@ def bubblesort():
         else:
             swaps = 0
 
+def info():
+
+
 car = []
 B = getinput(10)
 
