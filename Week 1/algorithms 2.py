@@ -11,6 +11,8 @@ def getinput(m):
     while vali == False:
         n = int(input("Enter an int less than " + str(m) +": "))
         vali = validate(n, m)
+        if vali == False:
+        	print("Error")
     return n
 
 def search():
@@ -23,7 +25,7 @@ def search():
     if found == False:
         print("Could not find that number.")
     else:
-        print("The number was at spot", car[i][1])
+        print("The number was at index", car[i][1])
 
 def printdata():
     print("Value | Index")
@@ -38,6 +40,7 @@ def bubblesort():
     while sortq == False:
         for i in range(len(car)-1):
             if car[i][0] > car[i+1][0]:
+            	#Swap
                 tmp = car[i]
                 car[i] = car[i+1]
                 car[i+1] = tmp
@@ -46,7 +49,15 @@ def bubblesort():
             sortq = True
         else:
             swaps = 0
-
+            
+def info():
+	total = 0
+	for i in range(len(car)):
+		total += car[i][0]
+	print("Avg:", total/len(car))
+	print("Max:", car[len(car)-1][0])
+	
+#Main
 car = []
 B = getinput(10)
 
@@ -58,4 +69,5 @@ for i in range(B):
 printdata()
 bubblesort()
 printdata()
+info()
 search()
