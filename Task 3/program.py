@@ -16,7 +16,7 @@ def checkchar(char, mn, mx):
         return False
 
 def checkvalid(uname):
-    if len(username) != 6:
+    if len(uname) != 6:
         return False
     if not checkchar(uname[0], 65, 90):
         return False
@@ -34,7 +34,7 @@ def get_data(file):
     n = int(input("How many members:"))
     for i in range(n):
         name = input("Enter Name:")
-        uname = input("Enter Username:")
+        uname = get_uname()
         file.write(name + "," + uname + "\n")
 
 def create():
@@ -72,10 +72,21 @@ def append():
     get_data(file)
     file.close()
 
+def advanced():
+    file_s = open("members.csv", "r")
+    file_a = open("members_a.csv", "w")
+    for line in file_s:
+        l = line.rstrip()
+        num = input("Tel. No.:")
+        date = input("Membership start date:")
+        file_a.write(l + "," + num + "," + date)
+    file_s.close()
+    file_a.close()
+
 
 create()
 display()
 find()
 append()
 display()
-
+advanced()
