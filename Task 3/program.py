@@ -25,7 +25,7 @@ def checkvalid(uname):
     if not checkchar(uname[2], 97, 122):
         return False
     try:
-        int(username[3:])
+        int(uname[3:])
     except:
         return False
     return True
@@ -77,9 +77,10 @@ def advanced():
     file_a = open("members_a.csv", "w")
     for line in file_s:
         l = line.rstrip()
+        print("For:", l)
         num = input("Tel. No.:")
         date = input("Membership start date:")
-        file_a.write(l + "," + num + "," + date)
+        file_a.write(l + "," + num + "," + date + "\n")
     file_s.close()
     file_a.close()
 
