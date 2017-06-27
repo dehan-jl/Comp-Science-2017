@@ -84,10 +84,17 @@ def advanced():
     file_s.close()
     file_a.close()
 
-
-create()
-display()
-find()
-append()
-display()
-advanced()
+q = True
+while q:
+	i = input("Choose usage: (h for help)")
+	
+	if i == "h":
+		print("h - help\nc - create new file\nd - display current file\nf - find uname for name\na - append to file\nx - extra data\nq - quit")
+	elif i == "c": create()
+	elif i == "d": display()
+	elif i == "f": find()
+	elif i == "a": append()
+	elif i == "x": advanced()
+	elif i == "q": q = False
+	else: print("Selection not valid")
+		
